@@ -14,8 +14,12 @@ server.register({
     return serverStart()
  })
  function serverStart() {
-  server.start(err => {
-    if (err) throw err
-    console.log('Servidor iniciando em %s', server.info.uri)
-  })
+  if (require.main === module){
+    server.start(err => {
+      if (err) throw err
+      console.log('Servidor iniciando em %s', server.info.uri)
+    })
+  }else{
+    module.exports = server;
+  }
  }
