@@ -2,7 +2,7 @@
 
 const lab = (exports.lab = require('lab').script());
 const { expect } = require('code');
-const server = require('../index');
+const server = require('../src/server');
 
 lab.describe('Testes da resource user', () => {
   lab.test('Deve retornar com {sucess:true} ', () => {
